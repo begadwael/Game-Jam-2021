@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using System;
 public class InputHandler : MonoBehaviour
 {
     [SerializeField] float mouseSensitivity=0.5f;
     Vector2 lookInput;
     Vector2 movement;
     bool Jump,Crouch,Run;
+    public Action onFire2;
     public Vector2 GetCameraInput(){
         return lookInput*mouseSensitivity;
     }
@@ -40,6 +41,11 @@ public class InputHandler : MonoBehaviour
     }
     public void OnRun(InputValue value){
         Run=value.isPressed;
+    }
+    public void OnFire2(InputValue value){
+        if(onFire2!=null){
+            onFire2();
+        }
     }
     #endregion
 }

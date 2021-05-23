@@ -78,7 +78,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     void UpdateSpeed(){
         currentSpeed=walkSpeed;
         if(isGrounded){
@@ -91,7 +90,6 @@ public class PlayerController : MonoBehaviour
             currentSpeed*=airControlMultiplier;
         }
     }
-
     void GroundCheck(){
         if (Physics.Raycast(groundCheck.transform.position, Vector3.down, out groundHit, disToGround,ground)) {
             slopeAngle=Vector3.Angle(groundHit.normal,movementDir.normalized)-90f;
