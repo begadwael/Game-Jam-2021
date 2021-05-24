@@ -1,18 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] Transform spawn;
+    [SerializeField] Transform shootAt;
+    [SerializeField] BulletHandler handler;
     public Weapon weaponPrefab;
     public Weapon currentWeapon;
     bool respond=true;
     bool active;
+    public int ammoLeft;
+    float delayTime;
+    public Action onShoot;
     void Start()
     {
         StartCoroutine("Create",weaponPrefab);
-        GetComponent<InputHandler>().onFire2+=ToogleWeapon;
+        InputHandler.instance.onFire2+=ToogleWeapon;
+        InputHandler.instance.onReload+=OnReload;
+        GetComponent<Pickuper>().onPickup+=Equip;
+        active=true;
+    }
+    private void Update()
+    {
+        delayTime=Mathf.Max(0,delayTime-Time.deltaTime);
+        if(InputHandler.instance.IsShooting){
+            if(delayTime==0){
+                OnShoot();
+                delayTime=currentWeapon.useDelay;
+            }
+        }
+    }
+    public void OnShoot(){
+        if(!respond||!active){
+            return;
+        }
+        if(currentWeapon.CanUse()){
+            var bullet=currentWeapon.Use(Camera.main,shootAt.position);
+            handler.Add(bullet);
+            onShoot?.Invoke();
+        }else{
+            StartCoroutine("Reload");
+        }
+    }
+    public void OnReload(){
+        StartCoroutine("Reload");
     }
     public void ToogleWeapon(){
         if(!respond){
@@ -26,14 +59,37 @@ public class WeaponManager : MonoBehaviour
         yield return currentWeapon.Set(active);
         respond=true;
     }
+    public IEnumerator Reload(){
+        if(ammoLeft<=0)yield break;
+        respond=false;
+        currentWeapon.ReloadAmmo(ref ammoLeft);
+        yield return currentWeapon.Reload();
+        respond=true;
+    }
+    public void Equip(Pickup item){
+        Weapon prefab=item.item.prefab.GetComponent<Weapon>();
+        if(prefab==null){
+            return;
+        }
+        if(!respond){
+            GetComponent<Pickuper>().Drop(item);
+            return;
+        }
+        StartCoroutine("Create",prefab);
+    }
     IEnumerator Create(Weapon prefab){
+        respond=false;
         if(currentWeapon!=null){
+            if(active){
+                yield return currentWeapon.Deactivate();
+            }
+            GetComponent<Pickuper>().Drop(currentWeapon.pickup);
             Destroy(currentWeapon.gameObject);
         }
-        respond=false;
         currentWeapon=Instantiate<Weapon>(prefab,spawn);
         yield return currentWeapon.Activate();
         respond = true;
+        delayTime=currentWeapon.useDelay;
     }
 
 }
