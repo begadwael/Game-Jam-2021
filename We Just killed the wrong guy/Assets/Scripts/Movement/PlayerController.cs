@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]float crouchMultiplier=.7f;
     [SerializeField] float airControlMultiplier=.6f;
     [SerializeField] float jumpForce=10f;
+    [SerializeField] float smoothing = 2;
     [SerializeField] bool useSlope=true;
+
     Transform cam;
     InputHandler iHandler;
     Rigidbody rBody;
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour
     RaycastHit groundHit;
     //Movement bools
     bool isGrounded;
+    Vector2 apliedMouseDelta;
+    Vector2 mouseLook;
 
     void Start()
     {
@@ -37,25 +41,23 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState=CursorLockMode.Locked;
         currentSpeed=walkSpeed;
     }
-
     void Update()
     {
         CalculateLook();
     }
-
     private void FixedUpdate()
     {
         CalculateMovement();
         GroundCheck();
     }
-    
     void CalculateLook(){
-        //Rotate Player
-        transform.Rotate(Vector3.up*iHandler.GetCameraInput().x*Time.deltaTime);
-        //Rotate Camera
-        camRot-=iHandler.GetCameraInput().y*Time.deltaTime;
-        camRot=Mathf.Clamp(camRot,-lookBounds,lookBounds);
-        cam.localRotation=Quaternion.Euler(camRot,0,0);
+        Vector2 delta=iHandler.GetCameraInput()*smoothing;
+        apliedMouseDelta=Vector2.Lerp(apliedMouseDelta,delta,1/smoothing);
+        mouseLook+=apliedMouseDelta;
+        mouseLook.y=Mathf.Clamp(mouseLook.y,-90,90);
+
+        cam.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Vector3.up);
     }
 
     void CalculateMovement(){
@@ -72,13 +74,10 @@ public class PlayerController : MonoBehaviour
 
         if(isGrounded){
             if(iHandler.IsJumping){
-                    rBody.drag = 0f;
-                    rBody.velocity = new Vector3(rBody.velocity.x, 0f, rBody.velocity.z);
-                    rBody.AddForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
+                   rBody.AddForce(Vector3.up * 100 * jumpForce);
             }
         }
     }
-
     void UpdateSpeed(){
         currentSpeed=walkSpeed;
         if(isGrounded){
@@ -91,7 +90,6 @@ public class PlayerController : MonoBehaviour
             currentSpeed*=airControlMultiplier;
         }
     }
-
     void GroundCheck(){
         if (Physics.Raycast(groundCheck.transform.position, Vector3.down, out groundHit, disToGround,ground)) {
             slopeAngle=Vector3.Angle(groundHit.normal,movementDir.normalized)-90f;
