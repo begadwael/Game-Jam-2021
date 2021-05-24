@@ -8,8 +8,20 @@ public class InputHandler : MonoBehaviour
     [SerializeField] float mouseSensitivity=0.5f;
     Vector2 lookInput;
     Vector2 movement;
-    bool Jump,Crouch,Run;
+    bool Jump,Crouch,Run,Shoot;
     public Action onFire2;
+    public Action onReload;
+    public Action onE;
+    public static InputHandler instance;
+    private void Awake()
+    {
+        if(instance!=null){
+            Destroy(this);
+        }else
+        {
+            instance=this;
+        }
+    }
     public Vector2 GetCameraInput(){
         return lookInput*mouseSensitivity;
     }
@@ -25,6 +37,9 @@ public class InputHandler : MonoBehaviour
     }
     public bool IsJumping{
         get{return Jump;}
+    }
+    public bool IsShooting{
+        get{return Shoot;}
     }
     #region MethodsCalledByPlayerController
     public void OnLook(InputValue value){
@@ -45,6 +60,19 @@ public class InputHandler : MonoBehaviour
     public void OnFire2(InputValue value){
         if(onFire2!=null){
             onFire2();
+        }
+    }
+    public void OnFire1(InputValue value){
+        Shoot=value.isPressed;
+    }
+    public void OnReload(InputValue value){
+        if(onReload!=null){
+            onReload();
+        }
+    }
+    public void OnE(InputValue value){
+        if(onE!=null){
+            onE();
         }
     }
     #endregion

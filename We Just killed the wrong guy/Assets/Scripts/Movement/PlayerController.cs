@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] LayerMask ground;
     [SerializeField] Transform groundCheck;
+    [SerializeField] Transform cam;
     [Header("Movement Variables")]
     [SerializeField] float walkSpeed=5f;
     [SerializeField] float sprintMultiplier=1.5f;
@@ -15,13 +16,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce=10f;
     [SerializeField] float smoothing = 2;
     [SerializeField] bool useSlope=true;
-
-    Transform cam;
     InputHandler iHandler;
     Rigidbody rBody;
     float currentSpeed;
     float lookBounds=85f;
-    float camRot;
     float slopeAngle;
     float disToGround;
     Vector3 velocity;
@@ -35,7 +33,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         iHandler=GetComponent<InputHandler>();
-        cam=Camera.main.transform;
         rBody=GetComponent<Rigidbody>();
         disToGround=groundCheck.position.y+0.1f;
         Cursor.lockState=CursorLockMode.Locked;
