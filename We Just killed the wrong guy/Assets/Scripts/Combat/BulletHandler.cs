@@ -52,7 +52,8 @@ public class BulletHandler : MonoBehaviour
                 hitVfxPrefab=bullet.data.hitVfx;
             }
         }
-        var hitVfx=Instantiate(hitVfxPrefab,_hit.point,Quaternion.identity);
+        var hitVfx=Instantiate(hitVfxPrefab);
+        hitVfx.transform.position=_hit.point;
         hitVfx.transform.forward=_hit.normal;
     }
     Vector3 GetBulletPosition(Bullet bullet){
