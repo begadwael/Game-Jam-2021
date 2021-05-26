@@ -46,6 +46,7 @@ public class BulletHandler : MonoBehaviour
     void CheckForDamagable(Bullet bullet,Ray _ray,RaycastHit _hit){
         GameObject hitVfxPrefab=bullet.data.hitVfx;
         if(_hit.collider.TryGetComponent<IDamagable>(out IDamagable damagable)){
+            print("damage!");
             damagable.TakeDamage(bullet.data.damage);
             hitVfxPrefab=damagable.GetHitVfx();
             if(hitVfxPrefab==null){
