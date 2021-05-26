@@ -9,7 +9,6 @@ public class AnimatorController : MonoBehaviour
     {
         animator=GetComponent<Animator>();
     }
-
     public void SetSpeed(float param){
         animator.SetFloat("speed",param);
     }
