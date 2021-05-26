@@ -14,18 +14,8 @@ public class Loader : MonoBehaviour
         SceneManager.LoadScene(gameSceneIndex);
     }
 
-    public void MainMenu()
+    public void LoadScene(int buildIndex)
     {
-        SceneManager.LoadScene(mainMenuSceneIndex);
-    }
-
-    public void Option()
-    {
-        SceneManager.LoadScene(optionsSceneIndex);
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
+        SceneManager.LoadScene(buildIndex);
     }
 }
