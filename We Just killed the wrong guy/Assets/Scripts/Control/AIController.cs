@@ -12,6 +12,7 @@ public abstract class AIController : MonoBehaviour
     protected Fighter fighter;
     protected Mover mover;
     protected Vector3 headingPos;
+    static List<AIController> all;
     private void Start()
     {
         fighter=GetComponent<Fighter>();
@@ -20,6 +21,10 @@ public abstract class AIController : MonoBehaviour
         wonderRange*=wonderRange;
         stoppingDis*=stoppingDis;
         detectRange*=detectRange;
+        if(all==null){
+            all=new List<AIController>();
+        }
+        all.Add(this);
     }
     IEnumerator Begin(){
         yield return DecideNextState();
