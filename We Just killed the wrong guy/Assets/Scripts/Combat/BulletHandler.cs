@@ -45,15 +45,16 @@ public class BulletHandler : MonoBehaviour
     }
     void CheckForDamagable(Bullet bullet,Ray _ray,RaycastHit _hit){
         GameObject hitVfxPrefab=bullet.data.hitVfx;
+        Transform parent=null;
         if(_hit.collider.TryGetComponent<IDamagable>(out IDamagable damagable)){
-            print("damage!");
             damagable.TakeDamage(bullet.data.damage);
             hitVfxPrefab=damagable.GetHitVfx();
+            parent=damagable.GetObject();
             if(hitVfxPrefab==null){
                 hitVfxPrefab=bullet.data.hitVfx;
             }
         }
-        var hitVfx=Instantiate(hitVfxPrefab);
+        var hitVfx=Instantiate(hitVfxPrefab,parent);
         hitVfx.transform.position=_hit.point;
         hitVfx.transform.forward=_hit.normal;
     }

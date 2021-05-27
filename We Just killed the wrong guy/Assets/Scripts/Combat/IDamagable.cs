@@ -6,4 +6,5 @@ public interface IDamagable
 {
     public void TakeDamage(int amt);
     public GameObject GetHitVfx();
+    public Transform GetObject();
 }

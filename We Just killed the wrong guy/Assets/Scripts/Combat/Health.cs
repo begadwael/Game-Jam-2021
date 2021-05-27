@@ -29,4 +29,9 @@ public class Health : MonoBehaviour, IDamagable
             onTakeDamage?.Invoke();
         }
     }
+
+    public Transform GetObject()
+    {
+        return transform;
+    }
 }
