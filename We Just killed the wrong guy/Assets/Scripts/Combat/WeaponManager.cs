@@ -20,6 +20,7 @@ public class WeaponManager : MonoBehaviour
         InputHandler.instance.onFire2+=ToogleWeapon;
         InputHandler.instance.onReload+=OnReload;
         GetComponent<Pickuper>().onPickup+=Equip;
+        GameManager.instance.onGameOver.AddListener(Stop);
         active=true;
     }
     private void Update()
@@ -91,5 +92,18 @@ public class WeaponManager : MonoBehaviour
         respond = true;
         delayTime=currentWeapon.useDelay;
     }
-
+    public int GetAmmoInWeapon(){
+        return currentWeapon.ammoLeft;
+    }
+    public  float GetRatio1()
+    {
+        return (currentWeapon.useDelay-delayTime)/currentWeapon.useDelay;
+    }
+    public  float GetRatio2()
+    {
+        return (float)currentWeapon.ammoLeft/(float)currentWeapon.maxAmmo;
+    }
+    void Stop(string msg){
+        respond=false;
+    }
 }

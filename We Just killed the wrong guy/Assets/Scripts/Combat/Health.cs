@@ -21,10 +21,10 @@ public class Health : MonoBehaviour, IDamagable
 
     public void TakeDamage(int amt)
     {
+        if(health<=0)return;
         health=Mathf.Max(0,health-amt);
         if(health==0){
             onDie?.Invoke();
-            gameObject.SetActive(false);
         }else{
             onTakeDamage?.Invoke();
         }

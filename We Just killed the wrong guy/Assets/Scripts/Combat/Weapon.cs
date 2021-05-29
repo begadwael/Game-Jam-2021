@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
     public AnimationClip deactivate;
     public AnimationClip reload;
     public UnityEvent onShoot;
-    int ammoLeft;
+    public int ammoLeft;
     private void Start()
     {
         ammoLeft=maxAmmo;
