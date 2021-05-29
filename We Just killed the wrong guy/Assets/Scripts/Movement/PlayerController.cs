@@ -37,10 +37,17 @@ public class PlayerController : MonoBehaviour
         disToGround=groundCheck.position.y+0.1f;
         Cursor.lockState=CursorLockMode.Locked;
         currentSpeed=walkSpeed;
+        GameManager.instance.onGameOver.AddListener(Stop);
     }
     void Update()
     {
         CalculateLook();
+    }
+    public void Stop(string s){
+        velocity=Vector3.zero;
+        movementDir=Vector3.zero;
+        enabled=false;
+        rBody.freezeRotation=true;
     }
     private void FixedUpdate()
     {

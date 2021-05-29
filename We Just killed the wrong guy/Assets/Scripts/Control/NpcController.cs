@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 public class NpcController : AIController
 {
-    protected override IEnumerator Behaviour(bool inRange)
+    protected override IEnumerator Behaviour()
     {
        yield return Wonder();
     }

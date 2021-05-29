@@ -10,6 +10,10 @@ public class AnimatorController : MonoBehaviour
         animator=GetComponent<Animator>();
     }
     public void SetSpeed(float param){
+        if(animator!=null)
         animator.SetFloat("speed",param);
+    }
+    public void Die(){
+        animator.SetTrigger("Death");
     }
 }

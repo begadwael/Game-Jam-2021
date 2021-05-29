@@ -9,11 +9,11 @@ public abstract class AIController : MonoBehaviour
     [SerializeField] protected float detectRange=10f;
     [Header("MovementData")]
     [SerializeField] protected float normalSpeed=1f;
-    protected Fighter fighter;
+    public Fighter fighter{get;private set;}
     protected Mover mover;
+    public Health health{get{return GetComponent<Health>();}}
     protected Vector3 headingPos;
-    static List<AIController> all;
-    private void Start()
+    protected void Start()
     {
         fighter=GetComponent<Fighter>();
         mover=GetComponent<Mover>();
@@ -21,20 +21,22 @@ public abstract class AIController : MonoBehaviour
         wonderRange*=wonderRange;
         stoppingDis*=stoppingDis;
         detectRange*=detectRange;
-        if(all==null){
-            all=new List<AIController>();
-        }
-        all.Add(this);
+        health.onDie.AddListener(Deactivate);
     }
     IEnumerator Begin(){
         yield return DecideNextState();
     }
     IEnumerator DecideNextState(){
-        bool inRange=InRange(fighter.target.position,detectRange);
-        yield return Behaviour(inRange);
+        yield return Behaviour();
         yield return DecideNextState();
     }
-    protected abstract IEnumerator Behaviour(bool inRange);
+    public virtual void Deactivate(){
+        if(mover!=null&&mover.enabled)
+        mover.Stop();
+        StopAllCoroutines();
+        enabled=false;
+    }
+    protected abstract IEnumerator Behaviour();
     protected abstract IEnumerator Wonder();
     #region  HelperMethods
     protected Vector3 GetRandomPos(float range){

@@ -21,6 +21,7 @@ public class Mover : MonoBehaviour
         }
     }
     public void Stop(){
+        animator.SetSpeed(0f);
         agent.isStopped=true;
     }
 }

@@ -6,9 +6,10 @@ public class EnemyController : AIController
 {
     [SerializeField] float runAwayRange=20f;
     [SerializeField] float runAwaySpeed=3f;
-    protected override IEnumerator Behaviour(bool inRange)
+    protected override IEnumerator Behaviour()
     {
-        if(inRange){
+        
+        if(InRange(fighter.target.position,detectRange)){
             yield return RunAway();
         }else{
             yield return Wonder();
