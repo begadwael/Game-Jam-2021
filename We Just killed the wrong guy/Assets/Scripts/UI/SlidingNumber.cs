@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class SlidingNumber : MonoBehaviour
 {
-    public Text numberText;
+    public TextMeshProUGUI numberText;
     public float animationTime = 1.5f;
     public float startNumber;
 

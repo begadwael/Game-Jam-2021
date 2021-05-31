@@ -16,7 +16,7 @@ public abstract class AIController : MonoBehaviour
     protected void Start()
     {
         fighter=GetComponent<Fighter>();
-        mover=GetComponent<Mover>();
+        mover =GetComponent<Mover>();
         StartCoroutine("Begin");
         wonderRange*=wonderRange;
         stoppingDis*=stoppingDis;
