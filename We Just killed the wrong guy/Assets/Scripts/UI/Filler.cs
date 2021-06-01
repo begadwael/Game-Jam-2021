@@ -7,6 +7,7 @@ public class Filler : MonoBehaviour
 {
     [SerializeField] Image image1;
     [SerializeField] Image image2;
+    [SerializeField] TextMeshProUGUI text1;
     [SerializeField] TextMeshProUGUI text2;
 
     [SerializeField] WeaponManager filler;
@@ -17,6 +18,7 @@ public class Filler : MonoBehaviour
     }
     public void Fill1(float ratio){
         image1.fillAmount=ratio;
+        text1.text=System.Math.Round(filler.delayTime,1).ToString();
     }
     public void Fill2(float ratio){
         image2.fillAmount=ratio;

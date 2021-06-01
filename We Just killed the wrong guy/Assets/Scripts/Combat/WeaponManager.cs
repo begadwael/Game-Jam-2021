@@ -12,7 +12,7 @@ public class WeaponManager : MonoBehaviour
     bool respond=true;
     bool active;
     public int ammoLeft;
-    float delayTime;
+    public float delayTime{get; private set;}
     public Action onShoot;
     void Start()
     {
