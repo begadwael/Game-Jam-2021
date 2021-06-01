@@ -6,29 +6,28 @@ public class DissolveEffect : MonoBehaviour
 {
     [SerializeField] float dissolveOffset=10f;
     [SerializeField] float timeBtwOffset=.01f;
+    [SerializeField] Material dissolveMat;
     [SerializeField] Health health;
     void Start()
     {
        health.onDie.AddListener(StartEffect); 
     }
     void StartEffect(){
-      MeshRenderer meshRenderer=GetComponent<MeshRenderer>();
-      Material[] materials;
-      if(meshRenderer==null)  
-      materials=GetComponent<SkinnedMeshRenderer>().materials;
-      else materials=meshRenderer.materials;
-      StartCoroutine(Effect(materials));
-      
+      print("starting!");
+      Renderer meshRenderer=GetComponent<Renderer>();
+      Material material;
+      meshRenderer.materials=new Material[]{dissolveMat};
+      material=meshRenderer.materials[0];
+      StartCoroutine(Effect(material));
     }
-    IEnumerator Effect(Material[] materials){
-      float i=2f; 
+    IEnumerator Effect(Material material){
+      float i=3f; 
       while(i>-2f)
-     { i-=dissolveOffset/1000;  
-        foreach(Material material in materials){
-          material.SetFloat("_CutoffHeight",i);
-          
+      { 
+        i-=dissolveOffset/1000;  
+        material.SetFloat("_CutoffHeight",i);
+        yield return new WaitForSeconds(timeBtwOffset);
       }
-      yield return new WaitForSeconds(timeBtwOffset);}
 
     }
 }

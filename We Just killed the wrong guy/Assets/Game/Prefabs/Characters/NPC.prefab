@@ -82,7 +82,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &165236435515191171
 GameObject:
@@ -237,7 +238,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &729110630372365189
 GameObject:
@@ -392,7 +394,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -464,6 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &1117740352888310404
 GameObject:
@@ -578,7 +581,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -650,6 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &1482843501626243551
 GameObject:
@@ -794,7 +798,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -866,6 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &2027841883290396367
 GameObject:
@@ -1013,7 +1018,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1085,6 +1090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &3193641278922781336
 GameObject:
@@ -1199,7 +1205,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1271,6 +1277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &4333484524441153638
 GameObject:
@@ -1477,7 +1484,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1549,6 +1556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &5994248974272601794
 GameObject:
@@ -1601,7 +1609,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1673,6 +1681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &6022183332598229941
 GameObject:
@@ -1852,6 +1861,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6114595349022079765}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!136 &6114595349022079765
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1978,7 +1999,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2050,6 +2071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &6213454866864830842
 GameObject:
@@ -2102,7 +2124,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2174,6 +2196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &6699019979605620429
 GameObject:
@@ -2226,7 +2249,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2298,6 +2321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &7030136397697772533
 GameObject:
@@ -2380,7 +2404,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2452,6 +2476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &7156438726275951396
 GameObject:
@@ -2504,7 +2529,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2576,6 +2601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &7330686634139010960
 GameObject:
@@ -2754,7 +2780,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
+  - {fileID: 2100000, guid: 4702a66f107fc17419d7e1aa69dee64d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2826,6 +2852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveOffset: 10
   timeBtwOffset: 0.01
+  dissolveMat: {fileID: 2100000, guid: bacc93cf7167ef245842755b0efc3e52, type: 2}
   health: {fileID: 6114595349022079770}
 --- !u!1 &9126621397607064447
 GameObject:
